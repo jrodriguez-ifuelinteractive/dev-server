@@ -2,21 +2,25 @@
 
 # Update script permissions
 sudo chmod +x /vagrant/scripts/php/composer/init.sh
+sudo chmod +x /vagrant/scripts/php/phpmyadmin/init.sh
 sudo chmod +x /vagrant/scripts/node/init.sh
 sudo chmod +x /vagrant/scripts/redis/init.sh
 sudo chmod +x /vagrant/scripts/angular/init.sh
 
+# Tools
 sudo apt-get -qq update
 sudo apt-get install -y python-software-properties
 sudo apt-get install -y build-essential
 sudo apt-get install -y zip
 sudo apt-get install -y apache2
 sudo apt-get install -y curl
+sudo apt-get install -y git
 
 # MySQL
 sudo apt-get -qq update
 export DEBIAN_FRONTEND=noninteractive
-sudo -E apt-get -q -y install mysql-server
+sudo -E apt-get -q -y install mysql-server-5.6
+sudo service mysql restart
 
 # PHP
 sudo add-apt-repository -y ppa:ondrej/php
@@ -29,7 +33,13 @@ sudo apt-get install -y php5.6-mcrypt
 sudo apt-get install -y php5.6-gd
 sudo apt-get install -y php5.6-curl
 sudo apt-get install -y php5.6-soap
+sudo apt-get install -y php5.6-mbstring
+
+# Composer
 /vagrant/scripts/php/composer/init.sh
+
+# PHPMyAdmin
+/vagrant/scripts/php/phpmyadmin/init.sh
 
 # Node
 /vagrant/scripts/node/init.sh

@@ -20,8 +20,9 @@ http://localhost:8080/
 * Ubuntu 14.04.5 LTS
 * Apache v2.4.7
 * PHP v5.6.30
-* MySQL v5.5.54
+* MySQL v5.6.33
 * Node v6.9.4
 * NPM v3.10.10
-* Angular CLI (global) 1.0.0-beta.26
+* Angular CLI (global)
 * Redis server v3.2.6
+* PHPMyAdmin 4.6.6
